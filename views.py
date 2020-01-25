@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-
 from django.shortcuts import HttpResponse
 
 # Create your views here.
@@ -10,29 +7,29 @@ from django.shortcuts import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import User
+from .models import Shipment
 
 
-class UserList(ListView):
-    model = User
+class ShipmentList(ListView):
+    model = Shipment
 
 
-class UserDetail(DetailView):
-    model = User
+class ShipmentDetail(DetailView):
+    model = Shipment
 
 
-class UserCreate(CreateView):
-    model = User
-    fields = ['name', 'email', 'address', 'phone', 'cnic', 'office', 'reg_no', 'user_type_id']
-    success_url = reverse_lazy('user_list')
+class ShipmentCreate(CreateView):
+    model = Shipment
+    fields = ['ship_size', 'ship_id', 'ship_initial_address', 'ship_type', 'ship_price', 'ship_reach_address']
+    success_url = reverse_lazy('shipment_list')
 
 
-class UserUpdate(UpdateView):
-    model = User
-    fields = ['name', 'email', 'address', 'phone', 'cnic', 'office', 'reg_no', 'user_type_id']
-    success_url = reverse_lazy('user_list')
+class ShipmentUpdate(UpdateView):
+    model = Shipment
+    fields = ['ship_size', 'ship_id', 'ship_initial_address', 'ship_type', 'ship_price', 'ship_reach_address']
+    success_url = reverse_lazy('shipment_list')
 
 
-class UserDelete(DeleteView):
-    model = User
-    success_url = reverse_lazy('user_list')
+class ShipmentDelete(DeleteView):
+    model = Shipment
+    success_url = reverse_lazy('shipment_list')
