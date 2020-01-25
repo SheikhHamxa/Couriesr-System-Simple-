@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ShipmentConfig(AppConfig):
-    name = 'Shipment'
+class CourierSystemConfig(AppConfig):
+    name = 'Sender'

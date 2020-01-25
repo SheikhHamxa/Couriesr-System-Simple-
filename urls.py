@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     # [...]
-    path('info', views.ShipmentList.as_view(), name='shipment_list'),
-    path('details/<int:pk>', views.ShipmentDetail.as_view(), name='shipment_details'),
-    path('create', views.ShipmentCreate.as_view(), name='shipment_create'),
-    path('update/<int:pk>', views.ShipmentUpdate.as_view(), name='shipment_update'),
-    path('delete/<int:pk>', views.ShipmentDelete.as_view(), name='shipment_delete'),
+    path('system', views.SenderList.as_view(), name='sender_list'),
+    path('details/<int:pk>', views.SenderDetail.as_view(), name='sender_details'),
+    path('create', views.SenderCreate.as_view(), name='sender_create'),
+    path('update/<int:pk>', views.SenderUpdate.as_view(), name='sender_update'),
+    path('delete/<int:pk>', views.SenderDelete.as_view(), name='sender_delete'),
 ]

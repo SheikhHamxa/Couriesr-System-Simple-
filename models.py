@@ -1,18 +1,13 @@
 from django.db import models
-
-# Create your models here.
-
-from django.db import models
 from django.urls import reverse
 
 
-class Shipment(models.Model):
-    ship_size = models.CharField(max_length=100)
-    ship_id = models.CharField(max_length=6)
-    ship_initial_address = models.CharField(max_length=100)
-    ship_type = models.CharField(max_length=100)
-    ship_price = models.CharField(max_length=50)
-    ship_reach_address = models.CharField(max_length=100)
+class Sender(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=50)
+    cnic = models.DecimalField(max_digits=13, decimal_places=00000-0000000-0)
 
 
 def __str__(self):
@@ -20,4 +15,4 @@ def __str__(self):
 
 
 def get_absolute_url(self):
-    return reverse('shipment_update', kwargs={'pk': self.pk})
+    return reverse('sender_update', kwargs={'pk': self.pk})
