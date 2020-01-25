@@ -6,10 +6,15 @@ from django.db import models
 from django.urls import reverse
 
 
-class Type(models.Model):
+class User(models.Model):
     name = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
-    user_type_id = models.CharField(max_length=100)
+    email = models.EmailField()
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=50)
+    cnic = models.CharField(max_length=50)
+    office = models.CharField(max_length=50)
+    reg_no = models.CharField(max_length=50)
+    user_type_id = models.CharField(max_length=50)
 
 
 def __str__(self):
@@ -17,4 +22,4 @@ def __str__(self):
 
 
 def get_absolute_url(self):
-    return reverse('type_update', kwargs={'pk': self.pk})
+    return reverse('user_update', kwargs={'pk': self.pk})

@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     # [...]
-    path('info', views.TypeList.as_view(), name='type_list'),
-    path('details/<int:pk>', views.TypeDetail.as_view(), name='type_details'),
-    path('create', views.TypeCreate.as_view(), name='type_create'),
-    path('update/<int:pk>', views.TypeUpdate.as_view(), name='type_update'),
-    path('delete/<int:pk>', views.TypeDelete.as_view(), name='type_delete'),
+    path('info', views.UserList.as_view(), name='user_list'),
+    path('details/<int:pk>', views.UserDetail.as_view(), name='user_details'),
+    path('create', views.UserCreate.as_view(), name='user_create'),
+    path('update/<int:pk>', views.UserUpdate.as_view(), name='user_update'),
+    path('delete/<int:pk>', views.UserDelete.as_view(), name='user_delete'),
 ]

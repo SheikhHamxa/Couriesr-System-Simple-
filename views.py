@@ -10,29 +10,29 @@ from django.shortcuts import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Type
+from .models import User
 
 
-class TypeList(ListView):
-    model = Type
+class UserList(ListView):
+    model = User
 
 
-class TypeDetail(DetailView):
-    model = Type
+class UserDetail(DetailView):
+    model = User
 
 
-class TypeCreate(CreateView):
-    model = Type
-    fields = ['name', 'type', 'user_type_id', ]
-    success_url = reverse_lazy('type_list')
+class UserCreate(CreateView):
+    model = User
+    fields = ['name', 'email', 'address', 'phone', 'cnic', 'office', 'reg_no', 'user_type_id']
+    success_url = reverse_lazy('user_list')
 
 
-class TypeUpdate(UpdateView):
-    model = Type
-    fields = ['name', 'type', 'user_type_id', ]
-    success_url = reverse_lazy('type_list')
+class UserUpdate(UpdateView):
+    model = User
+    fields = ['name', 'email', 'address', 'phone', 'cnic', 'office', 'reg_no', 'user_type_id']
+    success_url = reverse_lazy('user_list')
 
 
-class TypeDelete(DeleteView):
-    model = Type
-    success_url = reverse_lazy('type_list')
+class UserDelete(DeleteView):
+    model = User
+    success_url = reverse_lazy('user_list')
